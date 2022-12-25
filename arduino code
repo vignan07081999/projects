@@ -1,3 +1,4 @@
+```c
 int const trigPin = 10;
 int const echoPin = 9;
 int const buzzPin = 2;
@@ -23,3 +24,4 @@ digitalWrite(buzzPin, LOW);
 }
 delay(60);
  }
+ ```
