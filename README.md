@@ -9,7 +9,33 @@ Jumper wires
 ### Circuit Diagram
 ![image](https://user-images.githubusercontent.com/57031751/209454092-a065c434-a7ef-405a-af4a-8413b9ed22c8.png)
 ### Arduino Code
-https://github.com/vignan07081999/projects/blob/5fecd6d74bdcb97f3ad47846ac85235730ff5fff/arduino%20code
+```c
+int const trigPin = 10;
+int const echoPin = 9;
+int const buzzPin = 2;
+void setup()
+{
+pinMode(trigPin, OUTPUT); 
+pinMode(echoPin, INPUT); 
+pinMode(buzzPin, OUTPUT); 
+}
+
+void loop()
+{
+int duration, distance;
+digitalWrite(trigPin, HIGH);
+delay(1);
+digitalWrite(trigPin, LOW);
+duration = pulseIn(echoPin, HIGH);
+distance = (duration/2) / 29.1;
+if (distance <= 50 && distance >= 0) {
+digitalWrite(buzzPin, HIGH);
+} else {
+digitalWrite(buzzPin, LOW);
+}
+delay(60);
+ }
+```
 ### Applications
 Ideal for sensing clear objects and diffuse sensing of targets at long ranges, such as automobile windshields
 Detects full or empty positions in stack height control applications
